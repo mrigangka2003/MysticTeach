@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%-title%></title>
+</head>
+<body>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: beige;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loginForm{
+            display: flex;
+            flex-direction: column;
+            background-color: burlywood;
+            height: 30vh;
+            width: 25vw;
+            padding: 20px;
+            margin: 10px;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: bold;
+        }
+
+        .loginForm input{
+            height: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 10px;
+            border:none;
+            border-bottom: 1px solid black;
+            outline: none;
+            padding: 5px;
+        } 
+        
+        .loginForm button{
+            width: 50px;
+            margin-left: 10px;
+        }
+
+    </style>
+    <form action="/login" class="loginForm">
+        <label for="username">username</label>
+        <input type="text" name="username">
+        <label for="Password">Password</label>
+        <input type="password" name="password">
+
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
