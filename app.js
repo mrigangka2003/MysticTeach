@@ -7,6 +7,7 @@ const port = process.env.PORT
 const passport = require('passport') ;
 const session = require('express-session') ;
 const localStrategy = require('passport-local').Strategy ;
+const isLoggedIn = require('./middleware/isLoggedIn')
 
 //to converting file in json 
 app.use(express.json()) ;
@@ -36,6 +37,7 @@ connectDB() ;
 
 //routes
 app.use('/' , require('./routes/auth'));
+app.use('/' , require('./routes/index'));
 
 //basic route 
 app.get('/',(req,res)=>{

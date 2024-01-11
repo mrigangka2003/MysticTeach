@@ -31,13 +31,13 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
-passport.deserializeUser((id, done) => {
-  USER.findById(id, (err, user) => {
-    if (err) {
-        return done(err);
-    }
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await USER.findById(id);
     done(null, user);
-  });
+  } catch (err) {
+    done(err);
+  }
 });
 
 /*
@@ -55,11 +55,9 @@ router.post("/signup", async (req, res) => {
     const exixtingUser = await USER.findOne({ username });
 
     if (exixtingUser) {
-      return res
-        .status(400)
-        .json({
-          message: "Userhname is already exixts ! try something different",
-        });
+      return res.status(400).json({
+        message: "Userhname is already exixts ! try something different",
+      });
     }
 
     const hashedPassword = await bcrypt.hash(password, 12);
@@ -88,19 +86,12 @@ router.get("/login", (req, res) => {
 });
 
 router.post(
-    "/login",
-    passport.authenticate("local", {
-      failureRedirect: "/signup",
-      successRedirect: "/welcome",
-      failureFlash: true, // Enable flash messages
-    }),
-    async (req, res) => {
-      // This callback is empty in your code
-    }
-  );  
-
-router.get("/dashboard", (req, res) => {
-  res.send("thats meam you have successfully logged in and learnt passport.js");
-});
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/dashboard",
+    failureRedirect: "/login",
+  }),
+  function (req, res) {}
+);
 
 module.exports = router;
