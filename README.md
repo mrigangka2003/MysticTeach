@@ -1,7 +1,7 @@
 
-<h6>
+<h3>
   ****here we are building an teacher student communication app for now we are naming it MysticTeach****
-</h6>
+</h3>
 
 for backend i am using Node js & express 
 database :- mongoDb
