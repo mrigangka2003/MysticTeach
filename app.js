@@ -40,7 +40,7 @@ app.use('/' , require('./routes/auth'));
 app.use('/' , require('./routes/index'));
 
 //basic route 
-app.get('/',(req,res)=>{
+app.get('/',isLoggedIn,(req,res)=>{
     const data = "<center><h1>save data to mongodb and use passportjs</h1></center>"
     res.send(data)
 })

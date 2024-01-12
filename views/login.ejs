@@ -1,62 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%-title%></title>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
+
 <body>
-    <style>
-        *{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    <div class="container">
+        <h2>Welcome Again</h2>
+        <form action="/login" class="loginForm" method="post">
+            <label for="username">username</label>
+            <input type="text" name="username" placeholder="enter your username">
+            <label for="Password">Password</label>
+            <input type="password" name="password" placeholder="enter your password">
 
-        body{
-            background-color: beige;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .loginForm{
-            display: flex;
-            flex-direction: column;
-            background-color: burlywood;
-            height: 30vh;
-            width: 25vw;
-            padding: 20px;
-            margin: 10px;
-            color: white;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-style: bold;
-        }
-
-        .loginForm input{
-            height: 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 10px;
-            border:none;
-            border-bottom: 1px solid black;
-            outline: none;
-            padding: 5px;
-        } 
-        
-        .loginForm button{
-            width: 50px;
-            margin-left: 10px;
-        }
-
-    </style>
-    <form action="/login" class="loginForm" method="post">
-        <label for="username">username</label>
-        <input type="text" name="username">
-        <label for="Password">Password</label>
-        <input type="password" name="password">
-
-        <button type="submit">Login</button>
-    </form>
+            <button type="submit">Login</button>
+        </form>
+        <a href="signup">Don't have a account ?</a>
+    </div>
 </body>
+
 </html>
