@@ -39,11 +39,7 @@ connectDB() ;
 app.use('/' , require('./routes/auth'));
 app.use('/' , require('./routes/index'));
 
-//basic route 
-app.get('/',isLoggedIn,(req,res)=>{
-    const data = "<center><h1>save data to mongodb and use passportjs</h1></center>"
-    res.send(data)
-})
+
 
 app.listen(port,()=>{
     console.log(`You are now connected to the port ${port} http://localhost:5000`) ;
