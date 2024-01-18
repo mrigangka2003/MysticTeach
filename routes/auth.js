@@ -94,4 +94,16 @@ router.post(
   function (req, res) {}
 );
 
+
+//log out functionality 
+router.get('/logout', (req, res) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect('/');
+  });
+});
+
+
 module.exports = router;

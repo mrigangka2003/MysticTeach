@@ -9,13 +9,17 @@ const session = require('express-session') ;
 const localStrategy = require('passport-local').Strategy ;
 const isLoggedIn = require('./middleware/isLoggedIn')
 
+
+//connecting database here
+connectDB() ;
+
+
 //to converting file in json 
 app.use(express.json()) ;
 app.use(express.urlencoded({extended:true}))
 
 
 //setting up express-session
-
 app.use(session({
     secret:"ahehehe",
     resave: false ,
@@ -31,15 +35,16 @@ app.use(express.static("public")); //static files
 app.set("view engine", "ejs") ; //setting up view engine 
 
 
-//connecting database here
-connectDB() ;
+
 
 
 //routes
 app.use('/' , require('./routes/auth'));
 app.use('/' , require('./routes/index'));
 
-
+app.get('/',isLoggedIn,(req,res)=>{
+    res.json("do anything")
+})
 
 app.listen(port,()=>{
     console.log(`You are now connected to the port ${port} http://localhost:5000`) ;
