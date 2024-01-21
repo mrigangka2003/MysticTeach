@@ -7,7 +7,7 @@ const port = process.env.PORT
 const passport = require('passport') ;
 const session = require('express-session') ;
 const localStrategy = require('passport-local').Strategy ;
-const isLoggedIn = require('./middleware/isLoggedIn')
+const isLoggedIn = require('./middleware/isLoggedIn') ;
 
 
 //connecting database here
@@ -24,6 +24,9 @@ app.use(session({
     secret:"ahehehe",
     resave: false ,
     saveUninitialized: false ,
+    cookie:{
+        maxAge: 24*60*1000
+    }
 })) ;
 
 
