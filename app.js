@@ -44,6 +44,8 @@ app.set("view engine", "ejs") ; //setting up view engine
 //routes
 app.use('/' , require('./routes/auth'));
 app.use('/' , require('./routes/index'));
+app.use('/',require('./routes/home')) ;
+app.use('/',require('./routes/profile')) ;
 
 app.get('/',isLoggedIn,(req,res)=>{
     res.json("do anything")

@@ -21,28 +21,6 @@ router.get("/dashboard", isLoggedIn, async(req, res) => {
     }
 });
 
-router.get('/profile/:username', isLoggedIn,async (req, res) => {
-    const username = req.params.username;
-
-    try {
-        const user = await USER.findOne({ username: username });
-
-        if (!user) {
-            return res.status(404).send('User not found');
-        }
-
-        if (user.usertype === 'teacher') {
-            return res.render('profileTeacher', { user: user });
-        } else if (user.usertype === 'student') {
-            return res.render('profileStudent', { user: user });
-        } else {
-            return res.status(500).send('Invalid userType');
-        }
-    } catch (error) {
-        console.error(error);
-        return res.status(500).send('Internal Server Error');
-    }
-});
 
 
 

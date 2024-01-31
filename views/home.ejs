@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%-title%></title>
+    <title>homepage</title>
 </head>
-<body>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        body{
-            background-color: black;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: space-around;
-        }
 
-        a{
-            text-decoration: none;
-            font-size: 18px;
+<body>
+    <center>
+        <nav>
+            <li>logo</li>
+            <div>
+                <li>Search</li>
+                <li>dashboard</li>
+                <li>inbox</li>
+                <li>notification</li>
+                <li>
+                    <a href="/profile/<%=user%>">Profile</a>
+                </li>
+            </div>
+        </nav>
+    </center>
+    <footer style="background-color: black; color: white; text-align: center;">
+        copyright Deserve to Mriganka Datta
+    </footer>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        nav{
+            background: rgba(33, 24, 0, 0.09);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(7.6px);
+            -webkit-backdrop-filter: blur(7.6px);
+            border: 1px solid rgba(33, 24, 0, 0.3);
+            padding: 10px;
             color: white;
             cursor: pointer;
         }
+
+        nav,
+        div {
+            margin: 2px;
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        div li {
+            padding: 10px;
+        }
+
+
+        body {
+            background-color: rgba(237, 227, 227, 0.603);
+        }
     </style>
-    <a href="signup">sign up</a>
-    <a href="login">Login</a>
+    <h1>happy Learning <%=date%></h1>
 </body>
+
 </html>
