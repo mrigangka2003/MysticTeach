@@ -12,10 +12,6 @@ const teacherSchema = new mongoose.Schema({
         required:true,
         lowercase : true ,
     },
-    password :{
-        type:String,
-        required : true 
-    },
     fees:{
         type:Number ,
         required : true 

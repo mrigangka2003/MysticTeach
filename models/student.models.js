@@ -6,13 +6,15 @@ const studentSchema = new mongoose.Schema({
         type:mongoose.Schema.ObjectId,
         ref:"USER"
     },
-    password :{
-        type:String,
-        required : true 
-    },
     insitutionType:{
         type:String ,
         enum :['School','College'] ,
         required:true
+    },
+    major:{
+        type : String,
+        required : true ,
     }
-})
+}) ;
+
+module.exports = mongoose.model('STUDENT',studentSchema) ;
