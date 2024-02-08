@@ -1,7 +1,7 @@
 {
-  "name": "emnei",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Welcome to **MysticTeach** - an innovative teacher-student communication app designed for seamless interaction and learning. In this endeavor, we're utilizing cutting-edge technologies to create an efficient and secure platform.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,5 +20,6 @@
     "mongoose": "^8.0.3",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0"
-  }
+  },
+  "devDependencies": {}
 }
