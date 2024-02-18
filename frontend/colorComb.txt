@@ -1,0 +1,3 @@
+primary color -- #4390ab ;
+Accent Color 1 (Orange #fd7e14):
+Accent Color 2 (Sage Green #c0cc88):
